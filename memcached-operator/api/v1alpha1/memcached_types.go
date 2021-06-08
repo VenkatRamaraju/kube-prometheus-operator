@@ -40,7 +40,6 @@ type MemcachedStatus struct {
 //+kubebuilder:subresource:status
 
 // Memcached is the Schema for the memcacheds API
-//+kubebuilder:subresource:status
 type Memcached struct {
 	metav1.TypeMeta   `json:",inline"`
 	metav1.ObjectMeta `json:"metadata,omitempty"`
@@ -52,6 +51,7 @@ type Memcached struct {
 //+kubebuilder:object:root=true
 
 // MemcachedList contains a list of Memcached
+//+kubebuilder:subresource:status
 type MemcachedList struct {
 	metav1.TypeMeta `json:",inline"`
 	metav1.ListMeta `json:"metadata,omitempty"`
