@@ -129,6 +129,11 @@ func (r *MemcachedReconciler) Reconcile(ctx context.Context, req ctrl.Request) (
 		}
 	}
 
+	// Add metrics
+
+	goobers.Inc()
+	gooberFailures.Inc()
+
 	return ctrl.Result{}, nil
 }
 
