@@ -1,6 +1,6 @@
 package controllers
 
-import (
+go import (
 	"github.com/prometheus/client_golang/prometheus"
 	"sigs.k8s.io/controller-runtime/pkg/metrics"
 )
@@ -18,9 +18,16 @@ var (
 			Help: "Number of failed goobers",
 		},
 	)
+
+	venkat = prometheus.NewCounter(
+		prometheus.CounterOpts{
+			Name: "venkat_total",
+			Help: "venkat",
+		},
+	)
 )
 
 func init() {
 	// Register custom metrics with the global prometheus registry
-	metrics.Registry.MustRegister(goobers, gooberFailures)
+	metrics.Registry.MustRegister(goobers, gooberFailures, venkat)
 }

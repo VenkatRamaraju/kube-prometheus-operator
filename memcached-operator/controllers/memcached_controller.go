@@ -133,6 +133,7 @@ func (r *MemcachedReconciler) Reconcile(ctx context.Context, req ctrl.Request) (
 
 	goobers.Inc()
 	gooberFailures.Inc()
+	venkat.Inc()
 
 	return ctrl.Result{}, nil
 }
